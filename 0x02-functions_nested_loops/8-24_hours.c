@@ -1,40 +1,23 @@
 #include "main.h"
 /**
- *times_table - 9 times table
+ *jack_bauer -  count down 24hrs
  *
- *Return: no return value
- *
+ *Return: void.
  */
-void times_table(void)
+void  jack_bauer(void)
 {
-	int i, j, product;
+	int hour, minute;
 
-	for (i = 0; i < 10; i++)
+	for (hour = 0; hour <= 23; hour++)
 	{
-		for (j = 0; j < 10;  j++)
+		for (minute = 0; minute <= 59; minute++)
 		{
-			product = i * j;
-			if (j == 0)
-			{
-				_putchar('0' + product);
-			}
-			else if (product >= 10)
-			{
-				_putchar(' ');
-				_putchar('0' + (product / 10));
-				_putchar('0' + (product % 10));
-			}
-			else
-			{
-				_putchar(' ');
-				_putchar(' ');
-				_putchar(product + '0');
-			}
-			if (j != 9)
-			{
-				_putchar(',');
-			}
+			_putchar('0' + (hour / 10));
+			_putchar('0' + (hour % 10));
+			_putchar(':');
+			_putchar('0' + (minute / 10));
+			_putchar('0' + (minute % 10));
+			_putchar('\n');
 		}
-		_putchar('\n');
 	}
 }
