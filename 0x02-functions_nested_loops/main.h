@@ -3,6 +3,6 @@
 # include <stdio.h>
 # include <unistd.h>
 
-int	_putchat(char c);
+int	_putchar(char c);
 
 #endif /* MAIN_H */
