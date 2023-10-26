@@ -25,6 +25,6 @@ void print_binary(unsigned long int n)
 		if ((n >> shifts) & 1)
 			write(1, "1", 1);
 		else
-			write(1, "0", 1)
+			write(1, "0", 1);
 	}
 }
