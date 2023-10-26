@@ -1,10 +1,9 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * print_binary - prints the binary representation of a number
- * @n: number to print
- *
- * Return: void
+ * print_binary - print binary representation of a number
+ * @n: decimal number to print as binary
  */
 void print_binary(unsigned long int n)
 {
@@ -13,7 +12,7 @@ void print_binary(unsigned long int n)
 
 	if (n == 0)
 	{
-		write(1, "0", 1);
+		printf("0");
 		return;
 	}
 
@@ -23,8 +22,8 @@ void print_binary(unsigned long int n)
 	for (; shifts >= 0; shifts--)
 	{
 		if ((n >> shifts) & 1)
-			write(1, "1", 1);
+			printf("1");
 		else
-			write(1, "0", 1);
+			printf("0");
 	}
 }
