@@ -13,7 +13,7 @@ void print_binary(unsigned long int n)
 
 	if (n == 0)
 	{
-		_putchar("0");
+		write(1, "0", 1);
 		return;
 	}
 
@@ -23,8 +23,8 @@ void print_binary(unsigned long int n)
 	for (; shifts >= 0; shifts--)
 	{
 		if ((n >> shifts) & 1)
-			_putchar("1");
+			write(1, "1", 1);
 		else
-			_putchar("0");
+			write(1, "0", 1)
 	}
 }
