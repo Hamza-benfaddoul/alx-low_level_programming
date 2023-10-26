@@ -6,23 +6,29 @@
  *
  * Return: void
  */
-void    print_binary(unsigned long int n)
+void print_binary(unsigned long int n)
 {
-    unsigned long   mask = 1;
-    int             i = 0;
+	int num_bits;
+	int i;
+	unsigned long int mask;
+	int flag;
 
-    while (mask < n)
-    {
-        mask <<= 1;
-        i++;
-    }
-    while (i >= 0)
-    {
-        if (n & mask)
-            _putchar('1');
-        else
-            _putchar('0');
-        mask >>= 1;
-        i--;
-    }
+	flag = 0;
+	num_bits = 8 * sizeof(unsigned long int);
+	i = num_bits;
+	while (i - 1 >= 0)
+	{
+		mask = 1UL << i;
+		if (n & mask)
+		{
+			_putchar("1");
+			flag = 1;
+		}
+		else if (flag)
+			_putchar("0");
+		i--;
+	}
+	if (!flag)
+		_putchar("0");
+	_putchar("\n");
 }
